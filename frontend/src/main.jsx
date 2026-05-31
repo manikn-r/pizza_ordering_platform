@@ -42,7 +42,8 @@ function App() {
         {/* <BrowserRouter> */}
         {!hidePages && <Navbar />}
         <Routes>
-          <Route path="" element={<Login />}></Route>
+{/* 1. This catches the base URL and instantly redirects the browser to /login */}
+      <Route path="/" element={<Navigate to="/login" replace />} />
           {!isAdmin && <Route path="/menu" element={<Menu />}></Route>}
           {!isAdmin && <Route path="/cart" element={<Cart />}></Route>}
           <Route path="/login" element={<Login />}></Route>
