@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext,useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { context } from "../context/Cartcontext";
 import axios from "axios"
