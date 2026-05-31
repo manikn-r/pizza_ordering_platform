@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Environment variables (SUPER IMPORTANT)
+.env
+
+# Optional: Log files
+npm-debug.log
+
+serviceKey.json

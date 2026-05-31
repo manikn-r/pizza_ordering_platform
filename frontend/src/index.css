@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Override headings and important titles with Nunito */
+h1, h2, h3, h4, h5, h6, .pizza-name, .brand-title {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+nav{
+      position: sticky;
+    top: 0;
+    z-index: 1;
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+        background: #FFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    .content{
+          display: flex;
+    gap: 15px;
+    span{
+      cursor: pointer;
+    }
+    }
+}
+.container{
+  margin: 10px;
+}
+.rs{
+      font-family: "RupeeSign";
+}
+.logo{
+      width: 40px;
+    height: 40px;
+}
+.pizza-dom{
+    height: 300px;
+    position: relative;
+    /* max-width: 28vw; */
+    border-radius: 5px;
+    flex-basis: 24%;
+    img{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    }
+    .pizza-dom-structure{
+     position: absolute;
+    bottom: 0;
+    align-items: center;
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    /* background: linear-gradient(89.08deg, rgba(80, 80, 80, 0.15) 9.1%, rgba(123, 122, 122, 0.26) 108.79%, rgba(65, 65, 65, 0.26) 108.79%); */
+    backdrop-filter: blur(4px);
+    /* width: max-content; */
+    background: linear-gradient(0deg, #000000 -4.12%, rgba(0, 0, 0, 0.81) 45.45%, rgba(0, 0, 0, 0) 97.13%);
+    }
+    .pizza-detail{
+          flex-direction: column;
+    display: flex;
+    gap: 5px;
+    }
+}
+.cart-btn{
+  padding:7px;
+    font-size: 15px;
+    line-height: normal;
+    cursor: pointer;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #e31837;
+    border: 1px solid #e31837;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    color: #fff;
+    text-align: center;
+    
+}
+.pizza-container{
+  display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    /* width: 100%; */
+    /* justify-content: space-between; */
+}
+.signup-container, .login-container{
+      background: #fff;
+    border-radius: 3px;
+    padding: 30px 50px;
+    .fields{
+          margin: 50px auto;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 300px;
+            padding: 25px 40px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    h2{
+      text-align: center;
+    }
+    input {
+  width: 100%;
+  padding: 12px 15px;
+  
+  /* Your custom border */
+  border: 1px solid #cccccc; 
+  border-radius: 6px;
+  font-size: 1rem;
+  
+  /* THE FIX: Remove the browser's ugly default outline */
+  outline: none; 
+  
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input:focus {
+  /* Change the border color to your brand red when clicked */
+  border-color: #e62e3d; 
+  
+  /* Optional: Add a soft red glow instead of the harsh browser outline */
+  box-shadow: 0 0 0 3px rgba(230, 46, 61, 0.2); 
+}
+
+    }
+}
+.login-container::before{
+  filter: blur(5px); /* This is the secret to a smooth bokeh effect */
+}
+.login-container, .signup-container {
+  position: absolute;
+  top: -10px; /* Slight offset avoids white edges when blurring */
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  
+  /* Apply your high-quality appetizing pizza image here */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), /* Dark Overlay for contrast */
+                    url('./assets/loginImage.png'); 
+  
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Pushes it behind all content */
+}
+  /* .container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background: rgb(242, 242, 242);
+} */
+.cart-btn{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.added-cart-dom-fixed{
+      /* background: #e31837; */
+        background: #fff;
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box;
+    right: 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0; 
+  transform: translateY(100%); 
+   opacity: 0; 
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-in-out;
+}
+.added-cart-dom-fixed.show {
+  transform: translateY(0); /* Brings it back to its normal position */
+  opacity: 1;
+}
+.fixed-dom{
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 12px 6px;
+    border-radius: 3px;
+    background: #e31837;
+    .fa-cart-shopping{
+          margin-right: 10px;
+    }
+    &.payNowDom{
+    background: lightgreen;
+    color: #000;
+    justify-content: center;
+
+    }
+}
+.fixed-dom-wrapper{
+  cursor: pointer;
+      position: relative;
+    margin: 10px;
+    height: 100%;
+    background: #fff;
+}
+.fa-cart-shopping{
+  font-size: 14px;
+    margin-left: 5px;
+}
+.cart-container{
+      min-height: calc(100vh - 295px);
+  background: #eeeef1;
+  .cart-body{
+        display: flex;
+    justify-content: center;
+        padding-bottom: 20px;
+        gap: 50px;
+  }
+  .cart-header{
+    .fa-arrow-left{
+          margin-right: 5px;
+    font-size: 14px;
+    }
+    span{
+      cursor: pointer;
+    }
+display: flex;
+        align-items: center;
+        height: 40px;
+        background: #fff;
+        background: #FFF;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding: 5px 10px;
+        margin-bottom: 20px;
+  }
+  .product-container{
+    height: max-content;
+        background: #FFF;
+    padding: 10px 20px;
+    border-radius: 3px;
+    /* max-width: 50vw; */
+    width: 40%;
+    /* display: block; */
+    margin-bottom: 15px;
+  }
+  .selectedProduct{
+    justify-content: space-between;
+    display: flex;
+  }
+  .selected-prod-details{
+   display: flex;
+    gap: 5px;
+    flex-direction: column; 
+  }
+  .button{
+        padding: 8px;
+        display: flex;
+        gap: 10px;
+        border: 0.5px solid #e5e5e5;
+        border-radius: 3px;
+    }
+    .selected-prod-price-info{
+          display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+  }
+  .bill-data{
+        background: #fff;
+    padding: 10px 20px;
+    display: flex;
+    /* width: 25%; */
+    flex-direction: column;
+    display: flex;
+    gap: 5px;
+    .value-config{
+      display: flex;
+    justify-content: space-between;
+    &.total{
+      padding-top: 10px;
+    border-top: 1px solid #ddd;
+    }
+    }
+  }
+  .bill-header{
+        text-align: center;
+    position: relative;
+  }
+  .border{
+       border-top: 2px solid #ddd;
+    display: block;
+    top: 7px;
+    width: 34%;
+    position: absolute; 
+    &.right{
+      right: 0;
+    }
+  }
+  .bill-container{
+    width: 25%;
+    .bill-header{
+margin-bottom: 10px;
+    }
+  }
+  .selectedProduct:not(:last-child){
+    margin-bottom: 24px;
+  }
+  .menu-conatiner{
+    margin-bottom: 20px;
+  }
+  /* Matches the "Dark Charcoal" header suggestion */
+.footer-container {
+  background-color: #1c1c1c; 
+  color: #f1f1f1;
+  padding: 30px 20px 20px;
+  /* margin-top: 60px; Pushes it away from the pizza grid */
+  font-family: sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Makes it stack nicely on mobile screens */
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3, .footer-section h4 {
+  color: #ffc107; /* A warm yellow that matches the pizza cheese */
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #cccccc;
+}
+
+.footer-section.links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section.links li {
+  margin-bottom: 12px;
+}
+
+.footer-section.links a {
+  color: #cccccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect matches your red buttons */
+.footer-section.links a:hover {
+  color: #e62e3d; 
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 25px;
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #888;
+}
+/* ... your existing footer container and text styles ... */
+
+/* --- NEW PROMO SECTION STYLES --- */
+.footer-section.promo p {
+  margin-bottom: 15px;
+}
+
+.subscribe-box {
+  display: flex;
+  width: 100%;
+  max-width: 300px; /* Keeps the input from stretching too far */
+}
+
+.subscribe-box input {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 4px 0 0 4px; /* Rounds only the left side */
+  outline: none;
+  font-family: inherit;
+}
+
+.subscribe-box button {
+  padding: 10px 15px;
+  background-color: #e62e3d; /* Matches your brand red */
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0; /* Rounds only the right side */
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-box button:hover {
+  background-color: #c62828; /* Slightly darker red on hover */
+}
+  .price {
+  font-family: 'Inter', 'Roboto', sans-serif;
+  font-weight: 700; /* Bold makes the price clear */
+
+  font-size: 1.1rem;
+  
+  /* THIS IS THE SECRET SAUCE FOR CARTS! */
+  /* It forces numbers to align vertically perfectly in your Bill Details */
+  font-variant-numeric: tabular-nums;
+}
+.price .rs {
+  font-weight: 500;
+  font-size: 0.9rem;
+
+  margin-right: 4px;
+}
+.fa-arrow-right{
+      margin-left: 5px;
+    font-size: 14px;
+}
+.pointerBtn{
+  cursor: pointer;
+}
+/* --- Top Right Navigation --- */
+.top-right-nav {
+  position: absolute; /* Pins it relative to the login-container */
+  top: 30px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between text and button */
+}
+
+.nav-text {
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Keeps text readable over any background part */
+}
+.warning-msg{
+    color: red;
+    white-space: nowrap;
+    font-size: 12px;
+    position: relative;
+    display: block;
+    /* padding-bottom: 10px; */
+    margin-bottom: 10px;
+}
+.signup-corner-btn, .login-btn, .signBtn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect: Fills with brand red when hovered */
+.signup-corner-btn:hover, .login-btn:hover {
+  background-color: #e62e3d;
+  border-color: #e62e3d;
+  color: #ffffff;
+}
+.admin-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  min-height: 60vh; /* Keeps footer pushed down */
+}
+
+.admin-header {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #FF5733; /* Aura Pizza Brand Color */
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.table-wrapper {
+  overflow-x: auto; /* Makes it scrollable on mobile */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: #222; /* Matches your dark footer/navbar */
+  color: #fff;
+  padding: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.admin-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+  vertical-align: middle;
+}
+
+/* Zebra striping for readability */
+.admin-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover effect on rows */
+.admin-table tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.2s ease;
+}
+
+.amount-cell {
+  font-weight: bold;
+  color: #27ae60; /* Green for money */
+}
+
+.products-cell {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <title>Pizza Platform Logo - Dark Badge</title>
+  <desc>Dark circular badge logo with flame and pizza for a pizza ordering platform</desc>
+
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="190" fill="#1a1a1a"/>
+  <!-- Outer ring -->
+  <circle cx="200" cy="200" r="185" fill="none" stroke="#e85d04" stroke-width="4"/>
+  <!-- Inner ring -->
+  <circle cx="200" cy="200" r="175" fill="none" stroke="#e85d04" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <!-- Pizza base / crust -->
+  <circle cx="200" cy="215" r="90" fill="#f4a261"/>
+  <!-- Crust edge -->
+  <circle cx="200" cy="215" r="90" fill="none" stroke="#c97d3e" stroke-width="14"/>
+  <!-- Sauce -->
+  <circle cx="200" cy="215" r="76" fill="#c1121f"/>
+  <!-- Cheese -->
+  <circle cx="200" cy="215" r="76" fill="#f9c74f" opacity="0.88"/>
+
+  <!-- Slice cut lines -->
+  <line x1="200" y1="126" x2="200" y2="304" stroke="#c97d3e" stroke-width="2" opacity="0.5"/>
+  <line x1="122" y1="171" x2="278" y2="259" stroke="#c97d3e" stroke-width="2" opacity="0.5"/>
+  <line x1="278" y1="171" x2="122" y2="259" stroke="#c97d3e" stroke-width="2" opacity="0.5"/>
+
+  <!-- Pepperoni toppings -->
+  <circle cx="200" cy="193" r="12" fill="#9d0208"/>
+  <circle cx="200" cy="193" r="12" fill="none" stroke="#7b0109" stroke-width="1.5"/>
+  <circle cx="172" cy="232" r="11" fill="#9d0208"/>
+  <circle cx="172" cy="232" r="11" fill="none" stroke="#7b0109" stroke-width="1.5"/>
+  <circle cx="228" cy="232" r="11" fill="#9d0208"/>
+  <circle cx="228" cy="232" r="11" fill="none" stroke="#7b0109" stroke-width="1.5"/>
+
+  <!-- Basil leaves -->
+  <ellipse cx="193" cy="255" rx="8" ry="4" fill="#2d6a4f" transform="rotate(-35,193,255)"/>
+  <ellipse cx="214" cy="260" rx="8" ry="4" fill="#2d6a4f" transform="rotate(25,214,260)"/>
+
+  <!-- Flame -->
+  <path d="M200,118 C192,88 180,96 188,72 C180,80 168,68 180,48 C172,58 158,50 170,32 C180,48 196,40 191,60 C204,44 218,54 208,70 C220,62 226,80 214,92 C224,98 210,120 200,118Z" fill="#e85d04"/>
+  <path d="M200,118 C195,96 188,102 193,84 C188,90 180,84 186,70 C192,78 200,74 197,86 C206,76 212,84 206,94 C214,90 208,112 200,118Z" fill="#ffd166"/>
+
+  <!-- Brand name -->
+  <text x="200" y="338" font-family="Georgia, serif" font-size="32" font-weight="700" fill="#e85d04" text-anchor="middle" letter-spacing="4">PIZZA</text>
+  <text x="200" y="362" font-family="Arial, sans-serif" font-size="11" font-weight="400" fill="#888888" text-anchor="middle" letter-spacing="3">FAST · FRESH · FIRED UP</text>
+</svg>
