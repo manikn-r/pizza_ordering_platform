@@ -42,7 +42,7 @@ function App() {
         {/* <BrowserRouter> */}
         {!hidePages && <Navbar />}
         <Routes>
-          {!isAdmin && <Route path="" element={<Menu />}></Route>}
+          <Route path="" element={<Login />}></Route>
           {!isAdmin && <Route path="/menu" element={<Menu />}></Route>}
           {!isAdmin && <Route path="/cart" element={<Cart />}></Route>}
           <Route path="/login" element={<Login />}></Route>

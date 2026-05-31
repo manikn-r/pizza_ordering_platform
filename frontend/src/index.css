@@ -22,6 +22,7 @@ nav{
     padding: 5px 10px;
     margin-bottom: 20px;
     .content{
+      opacity: 1;
           display: flex;
     gap: 15px;
     span{
@@ -44,7 +45,8 @@ nav{
     position: relative;
     /* max-width: 28vw; */
     border-radius: 5px;
-    flex-basis: 24%;
+  min-width: 175px;
+  flex: 1;
     img{
     height: 100%;
     width: 100%;
@@ -53,7 +55,7 @@ nav{
     .pizza-dom-structure{
      position: absolute;
     bottom: 0;
-    align-items: center;
+    align-items: end;
     display: flex;
     color: #fff;
     justify-content: space-between;
@@ -147,7 +149,7 @@ input:focus {
   
   /* Apply your high-quality appetizing pizza image here */
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), /* Dark Overlay for contrast */
-                    url('./assets/loginImage.png'); 
+                    url('./assets/logo_2.jpg'); 
   
   background-size: cover;
   background-position: center;
@@ -161,11 +163,45 @@ input:focus {
     box-sizing: border-box;
     background: rgb(242, 242, 242);
 } */
+ .welcome-wrapper {
+      left: 60px;
+    position: absolute;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+  
+  /* Soft red/orange background */
+  background-color: #fff3f0; 
+  padding: 8px 18px;
+  border-radius: 50px;
+  border: 1px solid #ffdcd3;
+  
+  /* Subtle colored shadow */
+  box-shadow: 0 3px 8px rgba(225, 29, 72, 0.08);
+  
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover animation just for fun */
+.welcome-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(225, 29, 72, 0.15);
+}
+
+.user-email {
+  color: #e11d48; /* Deep red to match your Add buttons */
+  font-weight: 700;
+  margin: 0 5px;
+}
 .cart-btn{
       display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+        margin: 0 5px;
+        white-space: nowrap;
 }
 .added-cart-dom-fixed{
       /* background: #e31837; */
@@ -188,7 +224,7 @@ input:focus {
 .fixed-dom{
     display: flex;
     justify-content: space-between;
-    padding: 7px 12px 6px;
+    padding: 20px;
     border-radius: 3px;
     background: #e31837;
     .fa-cart-shopping{
@@ -290,6 +326,10 @@ display: flex;
   .bill-header{
         text-align: center;
     position: relative;
+    .text{
+          z-index: 10;
+    position: relative;
+    }
   }
   .border{
        border-top: 2px solid #ddd;
@@ -302,7 +342,7 @@ display: flex;
     }
   }
   .bill-container{
-    width: 25%;
+    width: 39%;
     .bill-header{
 margin-bottom: 10px;
     }
@@ -546,4 +586,13 @@ margin-bottom: 10px;
 .products-cell {
   font-size: 0.9rem;
   line-height: 1.4;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .content{
+    opacity: 0 !important;
+  }
 }

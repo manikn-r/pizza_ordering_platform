@@ -3,6 +3,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.js";
 import { useNavigate } from "react-router-dom";
 import image01 from "../assets/loginImage.png"
+import logo from "../assets/logo_2.jpg"
 function Login(){
   const navigate = useNavigate();
     const [formData, setFormData] = useState({

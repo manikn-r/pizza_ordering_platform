@@ -3,7 +3,15 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { context } from "../context/Cartcontext";
 import axios from "axios"
 import { auth } from "../firebase";
+import { onAuthStateChanged } from "firebase/auth"
 function Cart(){
+    useEffect( ()=>{
+            onAuthStateChanged(auth,(user)=>{
+                if(!user){
+                    navigate("/login")
+                }
+            })
+        })
     const navigate=useNavigate()
     const {pizzaItems, updatePizzaItems, user} = useContext(context)
     console.log(pizzaItems);
@@ -64,7 +72,7 @@ initPayment(order.data.data);
     
     
 const options = {
-  key: "rzp_test_Sr3vBntznm3PSK", // Put your public Key ID here
+  key: import.meta.env.VITE_RAZORPAY_KEY_ID, // Put your public Key ID here
         amount: order.amount, 
         currency: order.currency,
         name: "My MERN Store",

@@ -1,11 +1,20 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Navigate, useNavigate } from "react-router-dom"
 // import image01 from "../assets/Cheese Volcano Peppy Paneer.jpg"
 // import image02 from "../assets/Corn & Cheese Volcano.jpg"
 // import image03 from "../assets/Double Cheese Margherita.jpg"
 import { context } from "../context/Cartcontext"
+import { onAuthStateChanged } from "firebase/auth"
+import { auth } from "../firebase"
 function Menu() {
     // const [cartCount, setCartCount] = useState(0);
+    useEffect( ()=>{
+        onAuthStateChanged(auth,(user)=>{
+            if(!user){
+                navigate("/login")
+            }
+        })
+    })
 const navigate = useNavigate();
     // const [pizzaItems, updatePizzaItems] = useState([{
     //     image: image01,
